@@ -14,7 +14,7 @@ resource "aws_ssoadmin_permission_set" "sandbox-readonly" {
 }
 resource "aws_ssoadmin_managed_policy_attachment" "sandbox-readonly" {
   instance_arn       = tolist(data.aws_ssoadmin_instances.sandbox.arns)[0]
-  #managed_policy_arn = "arn:aws:iam::aws:policy/ReadOnlyAccess"
+  #managed_policy_arn = "arn:aws:iam::aws:policy/ReadOnlyAccess" for adding mutiple policy arn
   permission_set_arn = aws_ssoadmin_permission_set.sandbox-readonly.arn
   for_each  = toset(["arn:aws:iam::aws:policy/ReadOnlyAccess","arn:aws:iam::aws:policy/service-role/AWSGlueServiceRole"])
   managed_policy_arn = each.key
