@@ -22,7 +22,7 @@ module "aws-account-assignment" {
   source = "github.com/Pavanp1/ZRE-SSO.git//modules/AWS-SSO/sso-account-assignment?ref=v1.0.3"
 
   account_id = "767391508558"
-  groups= ["test","New-test"]
+  groups= ["test","New-test"] # We can put as many as groups to assign the same permission to single aws account
   depends_on = [module.permission_set]
   permission_set_arn = module.permission_set.arn
 }
