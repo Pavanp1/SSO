@@ -1,6 +1,6 @@
-variable "account_id" {
-  description = "AWS account id. Mitigates risk of accidentally running Terraform against unexpected account."
-}
+#variable "account_id" {
+#  description = "AWS account id. Mitigates risk of accidentally running Terraform against unexpected account."
+#}
 
 variable "region" {
   description = "AWS region"
